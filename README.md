@@ -84,6 +84,15 @@ The API Gateway is configured with the following routes:
 - Prometheus metrics are available through the Micrometer registry
 - Health checks and other actuator endpoints can be accessed through the standard actuator endpoints
 
+### Steps to run a Prometheus Server
+
+- Get the docker engine running
+- Use the Prometheus.yml file to run the server using the below docker command
+    ```bash
+    docker run -d -p 9090:9090 -v prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+    ````
+- Similarly, we can add Grafana that can use this Prometheus server as the datasource to display visualizations
+
 ## Dependencies
 Key dependencies include:
 - Spring Cloud Gateway for API Gateway functionality
